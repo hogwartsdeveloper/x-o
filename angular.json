@@ -34,6 +34,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/simple-css-grid/scss/simple-grid.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -102,6 +103,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/simple-css-grid/scss/simple-grid.scss",
               "src/styles.scss"
             ],
             "scripts": []
