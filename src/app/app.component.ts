@@ -31,6 +31,7 @@ export class AppComponent implements OnInit, OnDestroy{
   onNewGame() {
     this.gameService.currentPLayer$.next('x');
     this.gameService.stateSquare$.next('default');
+    this.gameService.selectedSquares$.next([]);
   }
 
   checkChampion(selected: any[]) {
@@ -44,14 +45,16 @@ export class AppComponent implements OnInit, OnDestroy{
       setTimeout(() => {
         alert('Победил игрок Х');
         this.onNewGame();
-      })
+      }, 200)
     } else if (
       this.checkVertical(selected, 'o') ||
       this.checkHorizontal(selected, 'o') ||
       this.checkX(selected, 'x')
     ) {
-      alert('Победил игрок O');
-      this.onNewGame();
+      setTimeout(() => {
+        alert('Победил игрок O');
+        this.onNewGame();
+      }, 200)
     }
   }
 
