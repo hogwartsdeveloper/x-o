@@ -10,7 +10,6 @@ import {GameService} from "../services/game.service";
 export class SquareComponent implements OnInit, OnDestroy {
   state: string = 'default';
   player: 'x' | 'o';
-  count: number = 0;
   destroy$ = new Subject<void>();
 
   constructor(private gameService: GameService) { }
@@ -22,16 +21,7 @@ export class SquareComponent implements OnInit, OnDestroy {
   }
 
   onClickSquare() {
-    this.count++;
-    switch (this.count) {
-      case 1:
-        this.state = this.player;
-        break;
-      case 2:
-        this.state = 'default';
-        this.count = 0;
-        break;
-    }
+    this.state = this.player;
 
     this.gameService.changePlayer();
   }
