@@ -1,0 +1,17 @@
+.container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.title {
+  color: #f44336;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 2px;
+}

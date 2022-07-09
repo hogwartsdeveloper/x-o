@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class GameService {
   currentPLayer$ = new BehaviorSubject<'x' | 'o'>('x');
   stateSquare$ = new BehaviorSubject<'default' | 'x' | 'o'>('default');

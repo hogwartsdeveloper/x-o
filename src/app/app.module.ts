@@ -3,22 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from "@angular/material/button";
-import {MatGridListModule} from "@angular/material/grid-list";
 import {CommonModule} from "@angular/common";
-import { SquareComponent } from './square/square.component';
+import {GameModule} from "./modules/game/game.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    SquareComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatGridListModule,
-    CommonModule
+    CommonModule,
+    GameModule
   ],
   providers: [],
   bootstrap: [AppComponent]
