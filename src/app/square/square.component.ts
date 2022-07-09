@@ -8,7 +8,7 @@ import {GameService} from "../services/game.service";
   styleUrls: ['./square.component.scss']
 })
 export class SquareComponent implements OnInit, OnDestroy {
-  state: string = 'default';
+  state: 'default' | 'x' | 'o';
   player: 'x' | 'o';
   destroy$ = new Subject<void>();
 
@@ -18,11 +18,14 @@ export class SquareComponent implements OnInit, OnDestroy {
     this.gameService.currentPLayer$
       .pipe(takeUntil(this.destroy$))
       .subscribe(player => this.player = player)
+
+    this.gameService.stateSquare$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(state => this.state = state)
   }
 
   onClickSquare() {
     this.state = this.player;
-
     this.gameService.changePlayer();
   }
 

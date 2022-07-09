@@ -5,7 +5,8 @@ import {BehaviorSubject} from "rxjs";
   providedIn: 'root'
 })
 export class GameService {
-  currentPLayer$ = new BehaviorSubject<'x' | 'o'>('o');
+  currentPLayer$ = new BehaviorSubject<'x' | 'o'>('x');
+  stateSquare$ = new BehaviorSubject<'default' | 'x' | 'o'>('default');
 
   constructor() { }
 

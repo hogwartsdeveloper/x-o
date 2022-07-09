@@ -20,6 +20,11 @@ export class AppComponent implements OnInit, OnDestroy{
     })
   }
 
+  onNewGame() {
+    this.gameService.currentPLayer$.next('x');
+    this.gameService.stateSquare$.next('default');
+  }
+
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete()

@@ -1,7 +1,7 @@
 <div class="container">
   <div>
     <h1 class="title">Текущий пользователь: {{player}}</h1>
-    <button mat-stroked-button color="warn">{{'Начать игру занова' | uppercase }}</button>
+    <button mat-stroked-button color="warn" (click)="onNewGame()">{{'Начать игру занова' | uppercase }}</button>
   </div>
   <div class="content">
     <app-square></app-square>
