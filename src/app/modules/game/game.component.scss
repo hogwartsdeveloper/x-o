@@ -1,8 +1,14 @@
 $clr-neon: hsl(317, 100%, 54%);
 $clr-bg: hsl(323, 21%, 17%);
 
+::ng-deep {
+  body {
+    background-color: $clr-bg;
+  }
+}
+
 .container {
-  background-color: white;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -83,3 +89,34 @@ $clr-bg: hsl(323, 21%, 17%);
 {
   opacity: 1;
 }
+
+
+.square {
+  border-bottom: $clr-neon 0.125em solid;
+  //border-right: $clr-neon 0.125em solid;
+}
+
+.square:nth-child(7),
+.square:nth-child(8),
+.square:nth-child(9)
+{
+  //border-bottom: none;
+}
+
+.square:nth-child(3),
+.square:nth-child(6),
+.square:nth-child(9)
+{
+  //border-right: none;
+  border-right: $clr-neon 0.125em solid;
+  box-shadow: inset 0.5em 0 0.5em -0.5em $clr-neon;
+}
+
+.square:nth-child(1),
+.square:nth-child(4),
+.square:nth-child(7)
+{
+  box-shadow: inset -0.5em 0 0.5em -0.5em $clr-neon;
+}
+
+
