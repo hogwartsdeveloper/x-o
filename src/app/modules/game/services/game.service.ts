@@ -21,4 +21,10 @@ export class GameService {
     }
     this.selectedSquares$.next([...this.selectedSquares$.value, obj])
   }
+
+  newGame(): void {
+    this.currentPLayer$.next('x');
+    this.stateSquare$.next('default');
+    this.selectedSquares$.next([]);
+  }
 }

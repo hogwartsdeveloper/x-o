@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GameService} from "../services/game.service";
+import {MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-champion-modal',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChampionModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dialogRef: MatDialogRef<ChampionModalComponent>,
+    private gameService: GameService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  playAgain(): void {
+    this.gameService.newGame();
+    this.closeModal();
+  }
+
+  closeModal(): void {
+    this.dialogRef.close();
   }
 
 }

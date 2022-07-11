@@ -34,9 +34,7 @@ export class GameComponent implements OnInit, OnDestroy {
   }
 
   onNewGame() {
-    this.gameService.currentPLayer$.next('x');
-    this.gameService.stateSquare$.next('default');
-    this.gameService.selectedSquares$.next([]);
+    this.gameService.newGame();
   }
 
   checkChampion(selected: any[]) {
@@ -48,7 +46,6 @@ export class GameComponent implements OnInit, OnDestroy {
       setTimeout(() => {
         // alert('Победил игрок Х');
         this.openModal()
-        this.onNewGame();
       }, 200)
     } else if (
       this.checkVertical(selected, 'o') ||
