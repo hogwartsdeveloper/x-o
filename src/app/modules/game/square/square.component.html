@@ -1,4 +1,5 @@
 <button mat-button (click)="onClickSquare()">
   <div class="item" *ngIf="state === 'o'">o</div>
   <div class="item" *ngIf="state === 'x'">x</div>
+  <div class="default-item" *ngIf="state === 'default'"></div>
 </button>
