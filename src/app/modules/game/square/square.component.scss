@@ -1,12 +1,17 @@
+@import "src/app/shared/styles/shared";
+
 :host::ng-deep {
-  flex: 1 30%;
-  margin: 2px;
-  background: #0000001f;
 
   button {
     width: 100%;
     height: 100%;
   }
+}
+
+.item {
+  font-size: 8rem;
+  color: $clr-neon;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.2), 0 0 0.45em currentColor;
 }
 
 
