@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {GameService} from "../services/game.service";
-import {MatDialogRef} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-champion-modal',
@@ -8,11 +8,15 @@ import {MatDialogRef} from "@angular/material/dialog";
   styleUrls: ['./champion-modal.component.scss']
 })
 export class ChampionModalComponent implements OnInit {
+  title: string;
 
   constructor(
     private dialogRef: MatDialogRef<ChampionModalComponent>,
-    private gameService: GameService
-  ) { }
+    private gameService: GameService,
+    @Inject(MAT_DIALOG_DATA) private data: { title: string }
+  ) {
+    this.title = data.title
+  }
 
   ngOnInit(): void {
   }

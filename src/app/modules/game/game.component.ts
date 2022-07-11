@@ -44,8 +44,7 @@ export class GameComponent implements OnInit, OnDestroy {
       this.checkX(selected, 'x')
     ) {
       setTimeout(() => {
-        // alert('Победил игрок Х');
-        this.openModal()
+        this.openModal('player one win!');
       }, 200)
     } else if (
       this.checkVertical(selected, 'o') ||
@@ -53,8 +52,7 @@ export class GameComponent implements OnInit, OnDestroy {
       this.checkX(selected, 'x')
     ) {
       setTimeout(() => {
-        alert('Победил игрок O');
-        this.onNewGame();
+        this.openModal('player two win!');
       }, 200)
     }
   }
@@ -166,8 +164,8 @@ export class GameComponent implements OnInit, OnDestroy {
     return champ;
   }
 
-  openModal(): void {
-    this.dialog.open(ChampionModalComponent)
+  openModal(title: string): void {
+    this.dialog.open(ChampionModalComponent, {data: {title}})
   }
 
   ngOnDestroy() {
