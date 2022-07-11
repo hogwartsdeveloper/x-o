@@ -76,8 +76,8 @@ $clr-bg: hsl(323, 21%, 17%);
 }
 
 .content {
-  margin-top: 20px;
-  height: 700px;
+  margin-top: 40px;
+  height: 90%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -149,3 +149,18 @@ $clr-bg: hsl(323, 21%, 17%);
 }
 
 
+.d-flex {
+  display: flex;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.text-align-center {
+  text-align: center;
+}
