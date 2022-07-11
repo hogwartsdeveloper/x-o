@@ -1,0 +1,18 @@
+$clr-neon: hsl(317, 100%, 54%);
+$clr-bg: hsl(323, 21%, 17%);
+
+.d-flex {
+  display: flex;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.text-align-center {
+  text-align: center;
+}
