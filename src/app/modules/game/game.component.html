@@ -1,9 +1,20 @@
 <div class="container">
-  <div>
-    <h1 class="title">Текущий пользователь: {{player}}</h1>
-    <button mat-stroked-button color="warn" (click)="onNewGame()">{{'Начать игру занова' | uppercase }}</button>
+  <div class="row d-flex justify-around">
+    <div class="col-8">
+      <div class="text-align-center">
+        <h1 class="title">Текущий пользователь: {{player}}</h1>
+        <button class="neon-button" (click)="onNewGame()">{{'Начать игру занова' | uppercase}}</button>
+      </div>
+    </div>
   </div>
-  <div class="content">
-    <app-square  *ngFor="let i of [1,2,3,4,5,6,7,8,9]" [id]="i"></app-square>
+  <div class="row d-flex justify-around flex-1">
+    <div class="col-8">
+      <div class="content">
+        <app-square class="ceil" *ngFor="let i of [1,2,3,4,5,6,7,8,9]" [id]="i"></app-square>
+<!--        <div class="ceil" *ngFor="let i of [1,2,3,4,5,6,7,8,9]"></div>-->
+      </div>
+    </div>
+
   </div>
+
 </div>

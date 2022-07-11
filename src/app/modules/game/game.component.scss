@@ -1,12 +1,21 @@
+@import "src/app/shared/styles/shared";
+
+::ng-deep {
+  body {
+    background-color: $clr-bg;
+  }
+}
+
 .container {
-  background-color: white;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
 .title {
-  color: #f44336;
+  color: $clr-neon;
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.45em currentColor;
 }
 
 .content {
@@ -14,4 +23,126 @@
   flex-wrap: wrap;
   flex: 1;
   padding: 2px;
+}
+
+.neon-button {
+  font-size: 1rem;
+  display: inline-block;
+  cursor: pointer;
+  color: $clr-neon;
+  border: $clr-neon 0.125em solid;
+  background: none;
+  padding: 0.25em 1em;
+  border-radius: 0.25em;
+
+  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.5), 0 0 0.45em currentColor;
+  box-shadow: inset 0 0 0.5em 0 $clr-neon, 0 0 0.5em 0 $clr-neon;
+
+  position: relative;
+}
+
+.neon-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-shadow: 0 0 2em 0.5em $clr-neon;
+  opacity: 0;
+  background-color: $clr-neon;
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+.neon-button:hover,
+.neon-button:focus {
+
+  color: $clr-bg;
+  text-shadow: none;
+}
+
+.neon-button:hover::before,
+.neon-button:focus::before
+{
+  opacity: 1;
+}
+
+.neon-button:hover::after,
+.neon-button:focus::after
+{
+  opacity: 1;
+}
+
+.content {
+  margin-top: 40px;
+  height: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.ceil {
+  border-bottom: $clr-neon 0.250em solid;
+  border-right: $clr-neon 0.250em solid;
+}
+
+.ceil:nth-child(3n) {
+  border-right: none;
+}
+
+.ceil:nth-child(n+7) {
+  border-bottom: none;
+}
+
+.ceil:nth-child(3) {
+  box-shadow: inset 1em -1em 1em -1em $clr-neon, -1em 1em 1em -1em $clr-neon;
+}
+
+.ceil:nth-child(6) {
+  box-shadow:
+    inset 1em 1em 1em -1em $clr-neon,
+    -1em -1em 1em -1em $clr-neon,
+    inset 0 -1em 1em -1em $clr-neon,
+    0 1em 1em -1em $clr-neon;
+}
+
+.ceil:nth-child(9) {
+  box-shadow: inset 1em 1em 1em -1em $clr-neon, -1em -1em 1em -1em $clr-neon;
+}
+
+.ceil:nth-child(1) {
+  box-shadow: inset -1em -1em 1em -1em $clr-neon, 1em 1em 1em -1em $clr-neon;
+}
+
+.ceil:nth-child(4) {
+  box-shadow:
+    inset -1em 1em 1em -1em $clr-neon,
+    1em -1em 1em -1em $clr-neon,
+    inset 0 -1em 1em -1em $clr-neon,
+    0 1em 1em -1em $clr-neon;
+}
+
+.ceil:nth-child(7) {
+  box-shadow: inset -1em 1em 1em -1em $clr-neon, 1em -1em 1em -1em $clr-neon;
+}
+
+.ceil:nth-child(2) {
+  box-shadow:
+    inset 1em -1em 1em -1em $clr-neon,
+    -1em 1em 1em -1em $clr-neon,
+    inset -1em 0 1em -1em $clr-neon,
+    1em 0 1em -1em $clr-neon;
+}
+
+.ceil:nth-child(8) {
+  box-shadow:
+    inset 1em 1em 1em -1em $clr-neon,
+    -1em -1em 1em -1em $clr-neon,
+    inset -1em 0 1em -1em $clr-neon,
+    1em 0 1em -1em $clr-neon;
+}
+
+.ceil:nth-child(5) {
+  box-shadow: inset 0 0 1em 0 $clr-neon, 0 0 1em 0 $clr-neon;
 }
