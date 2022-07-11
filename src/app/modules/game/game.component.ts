@@ -1,6 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subject, takeUntil} from "rxjs";
 import {GameService} from "./services/game.service";
+import {MatDialog} from "@angular/material/dialog";
+import {ChampionModalComponent} from "./champion-modal/champion-modal.component";
 
 @Component({
   selector: 'app-game',
@@ -12,7 +14,10 @@ export class GameComponent implements OnInit, OnDestroy {
   destroy$ = new Subject<void>();
   player: 'default' | 'x' | 'o';
 
-  constructor(private gameService: GameService) { }
+  constructor(
+    private dialog: MatDialog,
+    private gameService: GameService
+  ) { }
 
   ngOnInit(): void {
     this.gameService.currentPLayer$
@@ -41,7 +46,8 @@ export class GameComponent implements OnInit, OnDestroy {
       this.checkX(selected, 'x')
     ) {
       setTimeout(() => {
-        alert('Победил игрок Х');
+        // alert('Победил игрок Х');
+        this.openModal()
         this.onNewGame();
       }, 200)
     } else if (
@@ -161,6 +167,10 @@ export class GameComponent implements OnInit, OnDestroy {
     });
 
     return champ;
+  }
+
+  openModal(): void {
+    this.dialog.open(ChampionModalComponent)
   }
 
   ngOnDestroy() {
