@@ -1,6 +1,13 @@
 <div>
   <h3>{{title | titlecase}}</h3>
   <img src="assets/champ.png">
-  <button (click)="playAgain()">Начать занова</button>
-  <button (click)="closeModal()">Ok</button>
+  <app-button
+    [placeholder]="'Начать занова'"
+    (onClickEvent)="playAgain()"
+  ></app-button>
+
+  <app-button
+    [placeholder]="'Ок'"
+    (onClickEvent)="closeModal()"
+  ></app-button>
 </div>

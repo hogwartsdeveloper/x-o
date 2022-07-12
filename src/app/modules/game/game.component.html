@@ -3,7 +3,7 @@
     <div class="col-8">
       <div class="text-align-center">
         <h1 class="title">Текущий пользователь: {{player}}</h1>
-        <button class="neon-button" (click)="onNewGame()">{{'Начать занова' | uppercase}}</button>
+        <app-button (onClickEvent)="onNewGame()" [placeholder]="'Начать занова' | uppercase"></app-button>
       </div>
     </div>
   </div>

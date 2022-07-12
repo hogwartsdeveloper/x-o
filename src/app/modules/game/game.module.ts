@@ -6,6 +6,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {GameService} from "./services/game.service";
 import { ChampionModalComponent } from './champion-modal/champion-modal.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {ComponentsModule} from "../components/components.module";
 
 
 
@@ -18,7 +19,8 @@ import {MatDialogModule} from "@angular/material/dialog";
   imports: [
     CommonModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    ComponentsModule
   ],
   exports: [
     GameComponent
