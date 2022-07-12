@@ -1,6 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subject, takeUntil} from "rxjs";
 import {GameService} from "./services/game.service";
+import {MatDialog} from "@angular/material/dialog";
+import {ChampionModalComponent} from "./champion-modal/champion-modal.component";
 
 @Component({
   selector: 'app-game',
@@ -12,7 +14,10 @@ export class GameComponent implements OnInit, OnDestroy {
   destroy$ = new Subject<void>();
   player: 'default' | 'x' | 'o';
 
-  constructor(private gameService: GameService) { }
+  constructor(
+    private dialog: MatDialog,
+    private gameService: GameService
+  ) { }
 
   ngOnInit(): void {
     this.gameService.currentPLayer$
@@ -29,9 +34,7 @@ export class GameComponent implements OnInit, OnDestroy {
   }
 
   onNewGame() {
-    this.gameService.currentPLayer$.next('x');
-    this.gameService.stateSquare$.next('default');
-    this.gameService.selectedSquares$.next([]);
+    this.gameService.newGame();
   }
 
   checkChampion(selected: any[]) {
@@ -41,17 +44,15 @@ export class GameComponent implements OnInit, OnDestroy {
       this.checkX(selected, 'x')
     ) {
       setTimeout(() => {
-        alert('Победил игрок Х');
-        this.onNewGame();
+        this.openModal('player one win!');
       }, 200)
     } else if (
       this.checkVertical(selected, 'o') ||
       this.checkHorizontal(selected, 'o') ||
-      this.checkX(selected, 'x')
+      this.checkX(selected, 'o')
     ) {
       setTimeout(() => {
-        alert('Победил игрок O');
-        this.onNewGame();
+        this.openModal('player two win!');
       }, 200)
     }
   }
@@ -161,6 +162,10 @@ export class GameComponent implements OnInit, OnDestroy {
     });
 
     return champ;
+  }
+
+  openModal(title: string): void {
+    this.dialog.open(ChampionModalComponent, {data: {title}, panelClass: 'modal'})
   }
 
   ngOnDestroy() {
