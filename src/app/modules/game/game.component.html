@@ -7,11 +7,14 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row flex-1">
     <div class="col-12">
-      <div class="content">
-        <app-square class="ceil" *ngFor="let i of [1,2,3,4,5,6,7,8,9]" [id]="i"></app-square>
+      <div class="d-flex justify-center align-center h-100">
+        <div class="content">
+          <app-square class="ceil" *ngFor="let i of [1,2,3,4,5,6,7,8,9]" [id]="i"></app-square>
+        </div>
       </div>
+
     </div>
 
   </div>
