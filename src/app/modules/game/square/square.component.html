@@ -1,7 +1,7 @@
 <button mat-button (click)="onClickSquare()">
-  <div class="default-item" *ngIf="state === 'default'"></div>
+  <div class="default-item item-size" *ngIf="state === 'default'"></div>
   <ng-container *ngIf="state === 'x'">
-    <svg width="122" height="122" viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="item-size" width="122" height="122" viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_14_1055)">
         <g style="mix-blend-mode:hard-light" filter="url(#filter0_f_14_1055)">
           <path d="M77.2257 93.2868L76 92.0612L74.7744 93.2868L33.121 134.94C28.6858 139.375 21.4949 139.375 17.0597 134.94C12.6245 130.505 12.6245 123.314 17.0597 118.879L58.7131 77.2256L59.9388 75.9999L58.7131 74.7743L17.0599 33.121C12.6247 28.6858 12.6247 21.4949 17.0599 17.0597C21.4951 12.6245 28.686 12.6245 33.1212 17.0597L74.7744 58.713L76 59.9386L77.2257 58.713L118.879 17.0597C123.314 12.6245 130.505 12.6245 134.94 17.0597C139.375 21.4949 139.375 28.6858 134.94 33.121L93.2869 74.7743L92.0613 75.9999L93.2869 77.2256L134.94 118.879C139.376 123.314 139.376 130.505 134.94 134.94C130.505 139.375 123.314 139.375 118.879 134.94L77.2257 93.2868Z" stroke="#FF5C00" stroke-width="3.46667"/>
@@ -68,7 +68,7 @@
   </ng-container>
 
   <ng-container *ngIf="state === 'o'">
-    <svg width="122" height="122" viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="item-size" width="122" height="122" viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_14_1062)">
         <g style="mix-blend-mode:hard-light" filter="url(#filter0_f_14_1062)">
           <mask id="path-1-inside-1_14_1062" fill="white">
