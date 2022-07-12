@@ -6,11 +6,10 @@
   }
 }
 
-.container {
-  background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+:host::ng-deep {
+  .container {
+    height: 100%;
+  }
 }
 
 .title {
