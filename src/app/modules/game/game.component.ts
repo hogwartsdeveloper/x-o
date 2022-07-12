@@ -49,7 +49,7 @@ export class GameComponent implements OnInit, OnDestroy {
     } else if (
       this.checkVertical(selected, 'o') ||
       this.checkHorizontal(selected, 'o') ||
-      this.checkX(selected, 'x')
+      this.checkX(selected, 'o')
     ) {
       setTimeout(() => {
         this.openModal('player two win!');
@@ -165,7 +165,7 @@ export class GameComponent implements OnInit, OnDestroy {
   }
 
   openModal(title: string): void {
-    this.dialog.open(ChampionModalComponent, {data: {title}})
+    this.dialog.open(ChampionModalComponent, {data: {title}, panelClass: 'modal'})
   }
 
   ngOnDestroy() {
