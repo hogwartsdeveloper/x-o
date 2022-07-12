@@ -165,7 +165,13 @@ export class GameComponent implements OnInit, OnDestroy {
   }
 
   openModal(title: string): void {
-    this.dialog.open(ChampionModalComponent, {data: {title}, panelClass: 'modal'})
+    this.dialog.open(ChampionModalComponent,
+      {
+        data: {title},
+        panelClass: 'modal',
+        backdropClass: 'backdrop2',
+        disableClose: true
+      })
   }
 
   ngOnDestroy() {

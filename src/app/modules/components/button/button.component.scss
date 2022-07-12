@@ -17,6 +17,7 @@
 }
 
 .neon-button::after {
+  pointer-events: none;
   content: '';
   position: absolute;
   top: 0;
@@ -32,7 +33,6 @@
 
 .neon-button:hover,
 .neon-button:focus {
-
   color: $clr-bg;
   text-shadow: none;
 }
