@@ -44,15 +44,25 @@ export class GameComponent implements OnInit, OnDestroy {
       this.checkX(selected, 'x')
     ) {
       setTimeout(() => {
-        this.openModal('player one win!');
+        this.openModal('Игрок X победил!');
+        return
       }, 200)
-    } else if (
+    }
+
+    if (
       this.checkVertical(selected, 'o') ||
       this.checkHorizontal(selected, 'o') ||
       this.checkX(selected, 'o')
     ) {
       setTimeout(() => {
-        this.openModal('player two win!');
+        this.openModal('Игрок O победил!');
+        return
+      }, 200)
+    }
+
+    if (selected.length === 9) {
+      setTimeout(() => {
+        this.openModal('Ничья!');
       }, 200)
     }
   }
