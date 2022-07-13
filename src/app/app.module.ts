@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonModule} from "@angular/common";
 import {GameModule} from "./modules/game/game.module";
+import {AppRoutingModule} from "./app-routing/app-routing.module";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {GameModule} from "./modules/game/game.module";
     BrowserModule,
     BrowserAnimationsModule,
     CommonModule,
-    GameModule
+    GameModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
