@@ -1,6 +1,9 @@
 <div class="content">
   <app-neon-title [title]="title | titlecase"></app-neon-title>
-  <img src="assets/champ.png">
+  <ng-container *ngIf="title === 'Ничья!'; else img">
+    <img src="assets/draw.png">
+  </ng-container>
+
 
   <div class="buttons">
     <app-button
@@ -15,3 +18,7 @@
     ></app-button>
   </div>
 </div>
+
+<ng-template #img>
+  <img src="assets/champ.png">
+</ng-template>
