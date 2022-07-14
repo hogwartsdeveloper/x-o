@@ -3,6 +3,7 @@ import {Subject, takeUntil} from "rxjs";
 import {GameService} from "./services/game.service";
 import {MatDialog} from "@angular/material/dialog";
 import {ChampionModalComponent} from "./champion-modal/champion-modal.component";
+import { faTelegram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-game',
@@ -13,6 +14,10 @@ export class GameComponent implements OnInit, OnDestroy {
   title = 'x-o';
   destroy$ = new Subject<void>();
   player: 'default' | 'x' | 'o';
+
+  readonly faTelegram = faTelegram;
+  readonly faLinkedin = faLinkedin;
+  readonly faGithub = faGithub;
 
   constructor(
     private dialog: MatDialog,
@@ -182,6 +187,21 @@ export class GameComponent implements OnInit, OnDestroy {
         backdropClass: 'backdrop2',
         disableClose: true
       })
+  }
+
+  onClickLinkSocial(social: string): void {
+    switch (social) {
+      case 'telegram':
+        location.href = 'https://i.postimg.cc/d1dqYTyD/photo1657822676.jpg';
+        break;
+      case 'linkedin':
+        location.href = 'https://www.linkedin.com/in/жаннур-ахметханов-30b709210/';
+        break;
+      case 'github':
+        location.href = 'https://github.com/hogwartsdeveloper';
+        break;
+    }
+
   }
 
   ngOnDestroy() {
