@@ -27,7 +27,7 @@
   grid-template-rows: repeat(3, 1fr);
 
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
 }
 
 .ceil {
@@ -98,4 +98,64 @@
 .backdrop2 {
   background: black;
   opacity: 0.7;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1em;
+}
+
+#telegram, #linkedin, #github {
+  font-size: 2em;
+  padding: 5px 10px;
+  margin: 0 1rem;
+  background: none;
+  color: #fff;
+  border-radius: 30px;
+  box-shadow: inset 0 0 0.5em 0 $clr-neon, 0 0 0.5em 0 $clr-neon;
+  border: $clr-neon 0.125em solid;
+  position: relative;
+  cursor: pointer;
+}
+
+#telegram::after,
+#linkedin::after,
+#github::after{
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  border-radius: 30px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-shadow: 0 0 2em 0.5em $clr-neon;
+  opacity: 0;
+  background-color: $clr-neon;
+  z-index: -1;
+  transition: opacity 100ms linear;
+}
+
+#telegram:hover,
+#telegram:focus,
+#linkedin:hover,
+#linkedin:focus,
+#github:hover,
+#github:focus {
+  color: $clr-bg;
+  text-shadow: none;
+}
+
+#telegram:hover::after,
+#telegram:focus::after,
+#linkedin:hover::after,
+#linkedin:focus::after,
+#github:hover::after,
+#github:focus::after
+{
+  opacity: 1;
 }

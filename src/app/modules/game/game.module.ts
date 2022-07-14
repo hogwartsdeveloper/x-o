@@ -7,6 +7,7 @@ import {GameService} from "./services/game.service";
 import { ChampionModalComponent } from './champion-modal/champion-modal.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {ComponentsModule} from "../components/components.module";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 
 
@@ -16,12 +17,13 @@ import {ComponentsModule} from "../components/components.module";
     SquareComponent,
     ChampionModalComponent
   ],
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatDialogModule,
-    ComponentsModule
-  ],
+    imports: [
+        CommonModule,
+        MatButtonModule,
+        MatDialogModule,
+        ComponentsModule,
+        FontAwesomeModule
+    ],
   exports: [
     GameComponent
   ],

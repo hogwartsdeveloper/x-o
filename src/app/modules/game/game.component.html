@@ -14,9 +14,17 @@
           <app-square class="ceil" *ngFor="let i of [1,2,3,4,5,6,7,8,9]" [id]="i"></app-square>
         </div>
       </div>
-
     </div>
-
   </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="icon-container">
+        <fa-icon [icon]="faTelegram" id="telegram" (click)="onClickLinkSocial('telegram')"></fa-icon>
+        <fa-icon [icon]="faLinkedin" id="linkedin" (click)="onClickLinkSocial('linkedin')"></fa-icon>
+        <fa-icon [icon]="faGithub" id="github" (click)="onClickLinkSocial('github')"></fa-icon>
+      </div>
+    </div>
+  </div>
+
 
 </div>
